@@ -1,26 +1,40 @@
+# Diagramme de cas d'utilisation — Salle de sport
+
+## 🎭 Acteurs
+
+| Acteur | Description |
+|--------|-------------|
+| 👤 **Visiteur** | Personne non connectée, consulte le catalogue |
+| 🏋️ **Adhérent** | Utilisateur inscrit, réserve des séances |
+| 🧑‍🏫 **Coach** | Anime les séances, consulte son planning |
+| 👑 **Administrateur** | Gère coachs, disciplines et séances |
+
+## 🔗 Diagramme
+
 ```mermaid
 graph TB
     subgraph Acteurs["🎭 Acteurs"]
         V[👤 Visiteur]
-        C[👨‍🍳 Chef]
-        A[👑 Administrateur]
-        SYS1[🔐 Système d'authentification]
-        SYS2[💾 Base de données]
+        AD[🏋️ Adhérent]
+        CO[🧑‍🏫 Coach]
+        ADMIN[👑 Administrateur]
     end
 
-    subgraph Système["🖥️ Système de gestion des recettes"]
-        UC1["Consulter les recettes"]
-        UC2["Rechercher"]
-        UC3["Filtrer par type"]
-        UC4["Voir détail"]
-        UC5["S'authentifier"]
-        UC6["Créer une recette"]
-        UC7["Modifier ses recettes"]
-        UC8["Supprimer ses recettes"]
+    subgraph Système["🖥️ Système de gestion de salle de sport"]
+        UC1["Consulter le catalogue des séances"]
+        UC2["Rechercher une séance"]
+        UC3["Filtrer par discipline"]
+        UC4["Voir le détail d'une séance"]
+        UC5["S'inscrire / S'authentifier"]
+        UC6["Réserver une séance"]
+        UC7["Annuler une réservation"]
+        UC8["Consulter son planning"]
         UC9["Gérer son profil"]
-        UC10["Gérer les chefs"]
-        UC11["Gérer les types de cuisine"]
-        UC12["Modérer toutes les recettes"]
+        UC10["Consulter ses séances animées"]
+        UC11["Gérer les coachs"]
+        UC12["Gérer les disciplines"]
+        UC13["Gérer les séances"]
+        UC14["Suivre les réservations"]
     end
 
     V --> UC1
@@ -28,31 +42,31 @@ graph TB
     V --> UC3
     V --> UC4
 
-    C --> UC5
-    C --> UC6
-    C --> UC7
-    C --> UC8
-    C --> UC9
+    AD --> UC5
+    AD --> UC6
+    AD --> UC7
+    AD --> UC8
+    AD --> UC9
 
-    A --> UC10
-    A --> UC11
-    A --> UC12
+    CO --> UC10
+    CO --> UC9
+
+    ADMIN --> UC11
+    ADMIN --> UC12
+    ADMIN --> UC13
+    ADMIN --> UC14
 
     UC6 -.->|include| UC5
     UC7 -.->|include| UC5
     UC8 -.->|include| UC5
-    UC12 -.->|extend| UC7
+    UC10 -.->|include| UC5
 
-    UC5 --> SYS1
-    UC1 --> SYS2
-    UC6 --> SYS2
-
-    C -.->|hérite| V
-    A -.->|hérite| C
+    AD -.->|hérite| V
+    CO -.->|hérite| AD
+    ADMIN -.->|hérite| CO
 
     style V fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e
-    style C fill:#dbeafe,stroke:#2563eb,color:#1e3a8a
-    style A fill:#fef9c3,stroke:#ca8a04,color:#713f12
-    style SYS1 fill:#f3e8ff,stroke:#9333ea,color:#581c87
-    style SYS2 fill:#f3e8ff,stroke:#9333ea,color:#581c87
+    style AD fill:#dbeafe,stroke:#2563eb,color:#1e3a8a
+    style CO fill:#fef9c3,stroke:#ca8a04,color:#713f12
+    style ADMIN fill:#fce7f3,stroke:#db2777,color:#831843
 ```
