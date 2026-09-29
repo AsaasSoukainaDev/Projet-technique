@@ -1,0 +1,154 @@
+```html
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gestion des disciplines</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+
+<body class="bg-black text-white min-h-screen">
+
+    <div class="max-w-5xl mx-auto px-6 py-10">
+
+        <h1 class="text-3xl font-bold mb-8">
+            Gestion des disciplines
+        </h1>
+
+
+        <!-- Bouton Ajouter -->
+
+        <button
+            type="button"
+            id="btnAjouter"
+            class="bg-white text-black px-6 py-3 rounded-lg font-semibold"
+        >
+            + Ajouter
+        </button>
+
+
+        <!-- Formulaire -->
+
+        <div
+            id="formContainer"
+            style="display: none;"
+            class="bg-gray-900 p-6 rounded-xl mt-6"
+        >
+
+            <h2 class="text-xl font-bold mb-5">
+                Ajouter une discipline
+            </h2>
+
+
+            <form id="formDiscipline">
+
+                <div class="mb-4">
+
+                    <label
+                        for="libelle"
+                        class="block mb-2"
+                    >
+                        Libellé
+                    </label>
+
+                    <input
+                        type="text"
+                        id="libelle"
+                        placeholder="Ex : Yoga"
+                        class="w-full bg-black border border-gray-700 rounded-lg p-3"
+                    >
+
+                </div>
+
+
+                <div class="mb-5">
+
+                    <label
+                        for="description"
+                        class="block mb-2"
+                    >
+                        Description
+                    </label>
+
+                    <textarea
+                        id="description"
+                        placeholder="Description de la discipline"
+                        class="w-full bg-black border border-gray-700 rounded-lg p-3"
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="bg-white text-black px-5 py-3 rounded-lg"
+                >
+                    Enregistrer
+                </button>
+
+
+                <button
+                    type="button"
+                    id="btnAnnuler"
+                    class="border border-gray-700 px-5 py-3 rounded-lg ml-2"
+                >
+                    Annuler
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- Tableau -->
+
+        <div class="mt-8 bg-gray-900 rounded-xl overflow-hidden">
+
+            <table class="w-full">
+
+                <thead class="bg-gray-800">
+
+                    <tr>
+
+                        <th class="text-left p-4">
+                            ID
+                        </th>
+
+                        <th class="text-left p-4">
+                            Libellé
+                        </th>
+
+                        <th class="text-left p-4">
+                            Description
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="tableBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- IMPORTANT : app.js doit être ici -->
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
+

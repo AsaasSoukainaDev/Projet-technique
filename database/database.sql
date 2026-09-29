@@ -16,6 +16,7 @@ CREATE TABLE coach (
     PRIMARY KEY (id_coach)
 );
 
+
 -- TABLE : DISCIPLINE
 CREATE TABLE discipline (
     id_discipline INT         NOT NULL AUTO_INCREMENT,
@@ -69,3 +70,22 @@ INSERT INTO seance (titre, date_seance, heure_debut, duree_minutes, niveau, nb_p
 ('Yoga avancé',    '2025-01-17', '07:00:00', 75, 'Avancé',         8, 25.00, TRUE, 2, 1),
 ('Muscu débutant', '2025-01-18', '17:00:00', 60, 'Débutant',      15, 20.00, TRUE, 1, 2),
 ('Cardio HIIT',    '2025-01-18', '18:30:00', 45, 'Avancé',        12, 22.00, TRUE, 3, 3);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+spa   
+sp1 pho to spa ajax 
+
