@@ -1,6 +1,5 @@
 ```html
 <!DOCTYPE html>
-
 <html lang="fr">
 
 <head>
@@ -12,25 +11,32 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
+<body class="bg-black text-white">
 
-<body class="bg-black text-white min-h-screen">
+    <div class="w-4/5 mx-auto py-10">
 
-    <div class="max-w-5xl mx-auto px-6 py-10">
+        <!-- Header -->
 
-        <h1 class="text-3xl font-bold mb-8">
-            Gestion des disciplines
-        </h1>
+        <div class="flex justify-between items-center mb-8">
 
+            <div>
+                <h1 class="text-2xl font-bold">
+                    Gestion des disciplines
+                </h1>
 
-        <!-- Bouton Ajouter -->
+                <p class="text-gray-400 mt-1">
+                    Gérer les disciplines de la salle de sport
+                </p>
+            </div>
 
-        <button
-            type="button"
-            id="btnAjouter"
-            class="bg-white text-black px-6 py-3 rounded-lg font-semibold"
-        >
-            + Ajouter
-        </button>
+            <button
+                id="btnAjouter"
+                class="bg-white text-black px-5 py-2 rounded font-semibold"
+            >
+                + Ajouter
+            </button>
+
+        </div>
 
 
         <!-- Formulaire -->
@@ -38,68 +44,56 @@
         <div
             id="formContainer"
             style="display: none;"
-            class="bg-gray-900 p-6 rounded-xl mt-6"
+            class="bg-gray-900 p-6 rounded-lg mb-8"
         >
 
             <h2 class="text-xl font-bold mb-5">
                 Ajouter une discipline
             </h2>
 
-
             <form id="formDiscipline">
 
-                <div class="mb-4">
+                <label class="block mb-2">
+                    Libellé
+                </label>
 
-                    <label
-                        for="libelle"
-                        class="block mb-2"
-                    >
-                        Libellé
-                    </label>
+                <input
+                    type="text"
+                    id="libelle"
+                    placeholder="Ex : Yoga"
+                    class="w-full bg-black border border-gray-700 p-3 rounded mb-5"
+                >
 
-                    <input
-                        type="text"
-                        id="libelle"
-                        placeholder="Ex : Yoga"
-                        class="w-full bg-black border border-gray-700 rounded-lg p-3"
+
+                <label class="block mb-2">
+                    Description
+                </label>
+
+                <textarea
+                    id="description"
+                    placeholder="Description de la discipline"
+                    class="w-full bg-black border border-gray-700 p-3 rounded mb-5"
+                ></textarea>
+
+
+                <div class="flex gap-2">
+
+                    <button
+                        type="submit"
+                        class="bg-white text-black px-5 py-2 rounded"
                     >
+                        Enregistrer
+                    </button>
+
+                    <button
+                        type="button"
+                        id="btnAnnuler"
+                        class="border border-gray-600 px-5 py-2 rounded"
+                    >
+                        Annuler
+                    </button>
 
                 </div>
-
-
-                <div class="mb-5">
-
-                    <label
-                        for="description"
-                        class="block mb-2"
-                    >
-                        Description
-                    </label>
-
-                    <textarea
-                        id="description"
-                        placeholder="Description de la discipline"
-                        class="w-full bg-black border border-gray-700 rounded-lg p-3"
-                    ></textarea>
-
-                </div>
-
-
-                <button
-                    type="submit"
-                    class="bg-white text-black px-5 py-3 rounded-lg"
-                >
-                    Enregistrer
-                </button>
-
-
-                <button
-                    type="button"
-                    id="btnAnnuler"
-                    class="border border-gray-700 px-5 py-3 rounded-lg ml-2"
-                >
-                    Annuler
-                </button>
 
             </form>
 
@@ -108,7 +102,16 @@
 
         <!-- Tableau -->
 
-        <div class="mt-8 bg-gray-900 rounded-xl overflow-hidden">
+        <div class="bg-gray-900 rounded-lg overflow-hidden">
+
+            <div class="p-5 border-b border-gray-700">
+
+                <h2 class="text-lg font-semibold">
+                    Liste des disciplines
+                </h2>
+
+            </div>
+
 
             <table class="w-full">
 
@@ -116,15 +119,15 @@
 
                     <tr>
 
-                        <th class="text-left p-4">
+                        <th class="text-left px-6 py-4">
                             ID
                         </th>
 
-                        <th class="text-left p-4">
+                        <th class="text-left px-6 py-4">
                             Libellé
                         </th>
 
-                        <th class="text-left p-4">
+                        <th class="text-left px-6 py-4">
                             Description
                         </th>
 
@@ -135,6 +138,8 @@
 
                 <tbody id="tableBody">
 
+                    <!-- Les données seront ajoutées par JavaScript -->
+
                 </tbody>
 
             </table>
@@ -144,11 +149,9 @@
     </div>
 
 
-    <!-- IMPORTANT : app.js doit être ici -->
-
     <script src="app.js"></script>
 
 </body>
 
 </html>
-
+```

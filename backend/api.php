@@ -1,3 +1,4 @@
+
 <?php
 
 header('Content-Type: application/json');
@@ -17,18 +18,12 @@ $body = json_decode(file_get_contents('php://input'), true);
 
 if ($methode === 'GET') {
 
-    echo json_encode([
-        'success' => true,
-        'data' => $disciplines
-    ]);
-
+    echo json_encode($disciplines);
 
 } elseif ($methode === 'POST') {
 
-    $id = time();
-
     $discipline = new Discipline(
-        $id,
+        time(),
         $body['libelle'],
         $body['description']
     );
@@ -46,17 +41,6 @@ if ($methode === 'GET') {
         json_encode($disciplines, JSON_PRETTY_PRINT)
     );
 
-    echo json_encode([
-        'success' => true,
-        'message' => 'Discipline ajoutée',
-        'data' => $nouvelleDiscipline
-    ]);
-
-
-} else {
-
-    echo json_encode([
-        'success' => false,
-        'message' => 'Méthode HTTP non autorisée'
-    ]);
+    echo json_encode($nouvelleDiscipline);
 }
+
