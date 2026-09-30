@@ -1,4 +1,3 @@
-
 <?php
 
 header('Content-Type: application/json');
@@ -23,7 +22,7 @@ if ($methode === 'GET') {
 } elseif ($methode === 'POST') {
 
     $discipline = new Discipline(
-        time(),
+       $id= count($disciplines) + 1,
         $body['libelle'],
         $body['description']
     );
@@ -43,4 +42,3 @@ if ($methode === 'GET') {
 
     echo json_encode($nouvelleDiscipline);
 }
-
