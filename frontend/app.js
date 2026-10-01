@@ -1,5 +1,5 @@
 
-const API_URL = "../backend/api.php";
+const API_URL = "../backend/api/GestionDiscipline.php";
 
 const btnAjouter = document.getElementById("btnAjouter");
 const btnAnnuler = document.getElementById("btnAnnuler");

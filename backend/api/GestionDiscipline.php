@@ -2,7 +2,7 @@
 
 header('Content-Type: application/json');
 
-require_once 'Discipline.php';
+require_once "../class/Discipline.php";
 
 $fichier = __DIR__ . '/../data/disciplines.json';
 
