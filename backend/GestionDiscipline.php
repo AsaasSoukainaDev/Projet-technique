@@ -1,4 +1,3 @@
-
 <?php
 
 header('Content-Type: application/json');
@@ -43,5 +42,3 @@ if ($methode === 'GET') {
 
     echo json_encode($nouvelleDiscipline);
 }
-
-
