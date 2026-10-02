@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Gestion des disciplines</title>
+
+</head>
+<body class="bg-black text-white place-items-center">
+    
+    <h1 class="text-xl">Gestion des disciplines</h1> 
+    <button id="btnAjouter"> + Ajouter </button>
+
+    <div id="formContainer" class="bg-gray-900  p-6 rounded-lg mb-8 place-items-center border-2 border-solid" >
+
+         <h2>Ajouter une discipline</h2> 
+         <form id="formDiscipline"  class="mb-8 p-4 rounded-xs auto-cols-auto "> 
+
+            <label> Libellé  :</label> 
+
+            <input type="text" id="libelle" placeholder="Ex : Yoga"  class=" p-6rounded-xs border-solid">
+
+             <br><br><br> <label> Description </label>
+
+              <input type="text"id="description" placeholder="Description" class="m-8 p-4" >
+
+               <br><br> <button type="submit" class="bg-gray-900  p-4"> Enregistrer </button>
+
+                <button type="button" id="btnAnnuler" > Annuler </button>
+             </form> 
+            </div>
+            <table class="border-collapse border border-gray-400 place-items-center border-separate border-spacing-2 border border-gray-400 dark:border-gray-500">
+                 <thead ></thead> 
+                    <tr class="">
+                         <th class="border border-gray-300 dark:border-gray-600 p-6">ID</th> 
+
+                        <th class="border border-gray-300 dark:border-gray-600 p-6">Libellé</th> 
+                        <th class="border border-gray-300 dark:border-gray-600 p-6">Description</th> </tr> 
+                    </thead>
+
+                 <tbody id="tableBody"> </tbody> 
+
+                </table>
+                <script src="app.js"></script>
+</body>
+</html>
