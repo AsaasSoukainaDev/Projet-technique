@@ -42,3 +42,5 @@ if ($methode === 'GET') {
 
     echo json_encode($nouvelleDiscipline);
 }
+
+

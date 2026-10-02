@@ -108,3 +108,8 @@ formDiscipline.addEventListener("submit", function(event) {
 // Afficher au démarrage
 afficherDisciplines();
 
+
+
+
+
+

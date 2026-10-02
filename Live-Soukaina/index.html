@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gestion des disciplines</title>
+
+</head>
+
+<body>
+
+    <h1>Gestion des disciplines</h1>
+
+
+    <!-- Bouton Ajouter -->
+
+    <tbuton id="btnAjouter">
+        + Ajouter
+    </button>
+
+
+    <!-- Formulaire -->
+
+    <div id="formContainer" style="display: none;">
+
+        <h2>Ajouter une discipline</h2>
+
+        <form id="formDiscipline">
+
+            <label for="libelle">
+                Libellé
+            </label>
+
+            <input
+                type="text"
+                id="libelle"
+                placeholder="Ex : Yoga"
+            >
+
+            <br><br>
+
+
+            <label for="description">
+                Description
+            </label>
+
+            <textarea
+                id="description"
+                placeholder="Description"
+            ></textarea>
+
+            <br><br>
+
+
+            <button type="submit">
+                Enregistrer
+            </button>
+
+            <button
+                type="button"
+                id="btnAnnuler"
+            >
+                Annuler
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- Tableau -->
+
+    <h2>Liste des disciplines</h2>
+
+    <table border="1">
+
+        <thead>
+
+            <tr>
+
+                <th>ID</th>
+
+                <th>Libellé</th>
+
+                <th>Description</th>
+
+            </tr>
+
+        </thead>
+
+
+        <tbody id="tableBody">
+
+        </tbody>
+
+    </table>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
+```
