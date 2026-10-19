@@ -8,52 +8,34 @@ class GestionDiscipline {
     public function getAll(): array {
         if (!file_exists(self::$dataFile)) return [];
 
-        $json = file_get_contents(self::$dataFile);
-        $data = json_decode($json, true) ?? [];
+        $data = json_decode(file_get_contents(self::$dataFile), true) ?? [];
 
-        $disciplines = [];
-        foreach ($data as $row) {
-            $disciplines[] = new Discipline(
-                $row['id'],
-                $row['libelle'],
-                $row['description']
-            );
-        }
-        return $disciplines;
+        return array_map(fn($row) => new Discipline(
+            $row['id'],
+            $row['libelle'],
+            $row['description']
+        ), $data);
     }
 
     // Ajouter une discipline
     public function create(string $libelle, string $description): Discipline {
         $disciplines = $this->getAll();
 
-        $nouvelId = count($disciplines) + 1;
+        $nouvelle = new Discipline(count($disciplines) + 1, $libelle, $description);
 
-        $nouvelle = new Discipline($nouvelId, $libelle, $description);
-        $this->saveAll($disciplines, $nouvelle);
+        $disciplines[] = $nouvelle;
+        $this->saveAll($disciplines);
+
         return $nouvelle;
     }
 
     // Sauvegarder dans le JSON
-    private function saveAll(array $disciplines, ?Discipline $nouvelle = null): void {
-        $data = [];
-
-        foreach ($disciplines as $d) {
-            $data[] = [
-                'id'          => $d->getId(),
-                'libelle'     => $d->getLibelle(),
-                'description' => $d->getDescription()
-            ];
-        }
-
-        if ($nouvelle !== null) {
-            $data[] = [
-                'id'          => $nouvelle->getId(),
-                'libelle'     => $nouvelle->getLibelle(),
-                'description' => $nouvelle->getDescription()
-            ];
-        }
-
-      
+    private function saveAll(array $disciplines): void {
+        $data = array_map(fn($d) => [
+            'id'          => $d->getId(),
+            'libelle'     => $d->getLibelle(),
+            'description' => $d->getDescription()
+        ], $disciplines);
 
         file_put_contents(
             self::$dataFile,

@@ -1,7 +1,57 @@
 [
     {
         "id": 1,
+        "libelle": "Musculation",
+        "description": "Renforcement musculaire"
+    },
+    {
+        "id": 2,
+        "libelle": "Cardio",
+        "description": "Travail cardiovasculaire"
+    },
+    {
+        "id": 3,
+        "libelle": "Yoga",
+        "description": "Detente et souplesse"
+    },
+    {
+        "id": 4,
         "libelle": "yoga",
         "description": "hgghghghghghgh"
+    },
+    {
+        "id": 5,
+        "libelle": "soukaina",
+        "description": "hgghghghghghgh"
+    },
+    {
+        "id": 6,
+        "libelle": "yoga",
+        "description": "hgghghghghghgh"
+    },
+    {
+        "id": 7,
+        "libelle": "yoga",
+        "description": "hgghghghghghgh"
+    },
+    {
+        "id": 8,
+        "libelle": "yoga",
+        "description": "hgghghghghghgh"
+    },
+    {
+        "id": 9,
+        "libelle": "yoga",
+        "description": "hgghghghghghgh"
+    },
+    {
+        "id": 10,
+        "libelle": "yoga",
+        "description": "hgghghghghghgh"
+    },
+    {
+        "id": 11,
+        "libelle": "haaalo",
+        "description": "qaaaaaaaaaa"
     }
 ]

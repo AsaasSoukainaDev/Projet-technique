@@ -1,5 +1,5 @@
-﻿<?php
-
+<?php
+if (!ob_get_level()) ob_start();
 class Discipline {
     private int $id;
     private string $libelle;
