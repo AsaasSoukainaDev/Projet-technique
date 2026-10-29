@@ -3,8 +3,7 @@ require_once __DIR__ . '/Discipline.php';
 
 class GestionDiscipline {
     
-    private static string $dataFile = __DIR__ . '/../../data/disciplines.json';
-
+private static string $dataFile = __DIR__ . '/../../data/disciplines.json';
     public function getAll(): array {
         if (!file_exists(self::$dataFile)) return [];
         
@@ -56,6 +55,5 @@ class GestionDiscipline {
         );
     }
 }
-
 
 
