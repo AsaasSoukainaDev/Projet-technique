@@ -28,6 +28,7 @@ class GestionDiscipline{
         $nouvelleid=count($disciplines)+1;
 
         $nouvelle=new Discipline($nouvelleid,$libelle,$description);
+        $disciplines[]=$nouvelle;
         $this->saveAll($disciplines);
         return $nouvelle;
     }
@@ -35,7 +36,7 @@ class GestionDiscipline{
 
 
     public function saveAll(array $disciplines){
-        $disciplines=$this->getAll();
+        
         $data=[];
 
         foreach($disciplines as $d){

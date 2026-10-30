@@ -33,9 +33,9 @@ public function ajouterDiscipline(){
     $libelle=$_POST['libelle']?? "";
     $description=$_POST['description'] ?? "";
 
-    $disciplines=$gestion->create($libelle,$description);
+    $nouvelle=$gestion->create($libelle,$description);
 
-   echo  json_encode($disciplines);
+   echo  json_encode(['success'=>true,'id'=>$nouvelle->getId()]);
 
 }
 

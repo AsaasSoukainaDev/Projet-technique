@@ -1,12 +1,11 @@
-﻿
-const Form=document.getElementById('formDiscipline');
+﻿const form=document.getElementById('formDiscipline');
 const formContainer=document.getElementById('formContainer');
 
 const btnAjouter=document.getElementById('btnAjouter');
 const btnAnnuler=document.getElementById('btnAnnuler');
 
 const tableBody=document.getElementById('tableBody');
-const API = "http://localhost:8000/api/controllers/DisciplineController.php";
+const API = "api/controllers/DisciplineController.php";
 
 btnAjouter.addEventListener("click",()=>{
     formContainer.style.display="block";
@@ -22,8 +21,7 @@ function toast(message,ok=true){
 }
 
 
-
-Form.addEventListener("submit",async (e) => {
+form.addEventListener("submit",async (e) => {
     e.preventDefault();
 
      try{
@@ -50,4 +48,4 @@ Form.addEventListener("submit",async (e) => {
     }
     
 }) 
-
+charger();

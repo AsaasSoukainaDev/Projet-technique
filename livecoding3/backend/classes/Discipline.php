@@ -1,25 +1,17 @@
 ﻿<?php
-
-class Discipline{
+if (!ob_get_level()) ob_start();
+class Discipline {
     private int $id;
     private string $libelle;
     private string $description;
 
-    public function __construct(int $id,string $libelle ,string $description){
-
-        $this->id=$id;
-        $this->libelle=$libelle;
-        $this->description=$description;
+    public function __construct(int $id, string $libelle, string $description) {
+        $this->id = $id;
+        $this->libelle = $libelle;
+        $this->description = $description;
     }
 
-    public function getId(){
-        return $this->id;
-    }
-     public function getLibelle(){
-        return $this->libelle;
-    }
-     public function getDescription(){
-        return $this->description;
-    }
-   
+    public function getId(): int { return $this->id; }
+    public function getLibelle(): string { return $this->libelle; }
+    public function getDescription(): string { return $this->description; }
 }
