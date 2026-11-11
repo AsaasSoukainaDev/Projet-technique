@@ -1,4 +1,4 @@
-﻿<?php 
+<?php 
 
 require_once __DIR__ . '/../../backend/classes/GestionDiscipline.php';
 

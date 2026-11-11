@@ -17,10 +17,26 @@ function toast(message,ok=true){
     div.className=`text-white px-4 py-2 ${ok ? 'bg-green-500':'bg-red-500'}`;
     div.textContent=message;
     document.getElementById('toasts').appendChild(div);
+     setTimeout(() => div.remove(), 3000);
     
 }
 
-
+async function charger() {
+    try {
+        const res = await fetch(API);
+        const data = await res.json();
+        
+        tableBody.innerHTML = data.map(d => `
+            <tr>  
+                <td class="p-4">${d.id}</td>
+                <td class="p-4">${d.libelle}</td>
+                <td class="p-4">${d.description}</td>
+            </tr>
+        `).join('');
+    } catch (error) {
+        toast('Erreur lors du chargement', false);
+    }
+}
 form.addEventListener("submit",async (e) => {
     e.preventDefault();
 
