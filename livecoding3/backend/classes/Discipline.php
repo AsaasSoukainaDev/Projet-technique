@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 class Discipline {
     private int $id;
     private string $libelle;
